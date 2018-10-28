@@ -43,12 +43,11 @@ TODO(andresp): Delay showing the dialog (probably using transitions).
       <h2>{{heading}}</h2>
 
       <div hidden$="[[error]]">
-        <p>To test your webcam, microphone and speakers we need permission to use
-          them, approve by selecting “Allow”.</p>
+        <p>Para probar tu webcam, micrófono y parlantes se necesita permisos para acceder a ellos.</p>
       </div>
 
       <div hidden$="[[!error]]">
-        <p>Failed to access your computer's camera and microphone (<span>{{error}}</span>).</p>
+        <p>Falló el acceso a cámara o micrófono (<span>{{error}}</span>).</p>
 
         <p hidden$="[[!_isNotSupported(error)]]">GetUserMedia is not supported in your browser, please use a WebRTC enabled browser listed at <a href="http://www.webrtc.org">http://www.webrtc.org</a>.</p>
         <p hidden$="[[!_isPermissionDenied(error)]]">Click the <iron-icon icon="av:videocam-off"></iron-icon> icon in the URL bar above to give access to your device's camera and microphone.</p>
@@ -56,8 +55,7 @@ TODO(andresp): Delay showing the dialog (probably using transitions).
       </div>
 
       <div hidden$="[[!error]]" class="buttons" horizontal justified layout>
-        <paper-button on-tap="_createBugReport">File a bug</paper-button>
-        <paper-button dialog-dismiss>Continue without audio/or video</paper-button>
+        <paper-button dialog-dismiss>Continuar sin video o audio</paper-button>
       </div>
     </paper-dialog>
   </template>
@@ -67,9 +65,6 @@ TODO(andresp): Delay showing the dialog (probably using transitions).
       ready: function() {
         // Hack: for some reason the dialog position and size are wrong when they are calculated directly.
         setTimeout(this.$.dialog.refit.bind(this.$.dialog), 0);
-      },
-      _createBugReport: function() {
-        this.fire('bug-report');
       },
       _isNotSupported: function(error) {
         return error === 'NotSupported';

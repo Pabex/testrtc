@@ -17,21 +17,21 @@
 // Enumerate test case names.
 function TestCaseNames() {
   this.testCases = {
-    AUDIOCAPTURE: 'Audio capture',
-    CHECKRESOLUTION240: 'Check resolution 320x240',
-    CHECKRESOLUTION480: 'Check resolution 640x480',
-    CHECKRESOLUTION720: 'Check resolution 1280x720',
-    CHECKSUPPORTEDRESOLUTIONS: 'Check supported resolutions',
-    DATATHROUGHPUT: 'Data throughput',
-    IPV6ENABLED: 'Ipv6 enabled',
-    NETWORKLATENCY: 'Network latency',
-    NETWORKLATENCYRELAY: 'Network latency - Relay',
-    UDPENABLED: 'Udp enabled',
-    TCPENABLED: 'Tcp enabled',
-    VIDEOBANDWIDTH: 'Video bandwidth',
-    RELAYCONNECTIVITY: 'Relay connectivity',
-    REFLEXIVECONNECTIVITY: 'Reflexive connectivity',
-    HOSTCONNECTIVITY: 'Host connectivity'
+    AUDIOCAPTURE: 'Captura de audio',
+    CHECKRESOLUTION240: 'Resolución 320x240',
+    CHECKRESOLUTION480: 'Resolución 640x480',
+    CHECKRESOLUTION720: 'Resolución 1280x720',
+    CHECKSUPPORTEDRESOLUTIONS: 'Resoluciones soportadas',
+    DATATHROUGHPUT: 'Rendimiento de datos',
+    IPV6ENABLED: 'IPv6 habilitado',
+    NETWORKLATENCY: 'Latencia de la red',
+    NETWORKLATENCYRELAY: 'Latencia de la red - Retransmisión',
+    UDPENABLED: 'UDP habilitado',
+    TCPENABLED: 'TCP habilitado',
+    VIDEOBANDWIDTH: 'Ancho de banda de video',
+    RELAYCONNECTIVITY: 'Conectividad de retransmisión',
+    REFLEXIVECONNECTIVITY: 'Conectividad reflexiva',
+    HOSTCONNECTIVITY: 'Conectividad de host'
   };
   return this.testCases;
 }

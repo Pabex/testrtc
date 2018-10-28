@@ -17,11 +17,11 @@
 // Enumerate test suite names.
 function TestSuiteNames() {
   this.testSuites = {
-    CAMERA: 'Camera',
-    MICROPHONE: 'Microphone',
-    NETWORK: 'Network',
-    CONNECTIVITY: 'Connectivity',
-    THROUGHPUT: 'Throughput'
+    CAMERA: 'Cámara',
+    MICROPHONE: 'Micrófono',
+    NETWORK: 'Red',
+    CONNECTIVITY: 'Conectividad',
+    THROUGHPUT: 'Rendimiento'
   };
   return this.testSuites;
 }
