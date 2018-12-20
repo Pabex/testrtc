@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Test de compatibilidad con Hospital Virtual</title>
+    </head>
+    <body>
+        <button type="button" id="btn-test" >Empezar test de audio</button>
+        <button type="button" id="btn-record" >Empezar a grabar</button>
+        <script type="text/javascript" src="mic_test.js"></script>
+        <script type="text/javascript">
+            // Eventos
+            document.getElementById("btn-test").addEventListener("click", function () {
+                micTest.run();
+            });
+
+            document.getElementById("btn-record").addEventListener("click", function () {
+                micTest.record();
+            });
+
+            // Funciones
+            function doGetUserMedia(constraints, onSuccess, onFail) {
+                navigator.mediaDevices.getUserMedia(constraints)
+                        .then(function (stream) {
+                            /*var cam = self.getDeviceName_(stream.getVideoTracks());
+                             var mic = self.getDeviceName_(stream.getAudioTracks());
+                             traceGumEvent({
+                             'status': 'success', 'camera': cam,
+                             'microphone': mic
+                             });*/
+                            onSuccess.apply(this, arguments);
+                        })
+                        .catch(function (error) {
+                            //traceGumEvent({'status': 'fail', 'error': error});
+                            if (onFail) {
+                                onFail.apply(this, arguments);
+                            } else {
+                                console.log('Failed to get access to local media due to ' +
+                                        'error: ' + error.name);
+                            }
+                        });
+            }
+
+            function setTimeoutWithProgressBar(timeoutCallback, timeoutMs) {
+                var start = window.performance.now();
+                var updateProgressBar = setInterval(function () {
+                    var now = window.performance.now();
+                    console.log((now - start) * 100 / timeoutMs);
+                }, 100);
+
+                var timeoutTask = function () {
+                    clearInterval(updateProgressBar);
+                    console.log(100);
+                    timeoutCallback();
+                };
+                var timer = setTimeout(timeoutTask, timeoutMs);
+                var finishProgressBar = function () {
+                    clearTimeout(timer);
+                    timeoutTask();
+                };
+                return finishProgressBar;
+            }
+
+            // Setup
+            try {
+                window.AudioContext = window.AudioContext || window.webkitAudioContext;
+                var audioContext = new AudioContext();
+            } catch (e) {
+                console.log('Failed to instantiate an audio context, error: ' + e);
+            }
+            var micTest = new MicTest(audioContext);
+        </script>
+
+    </body>
+</html>
