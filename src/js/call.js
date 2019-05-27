@@ -234,7 +234,7 @@ Call.cachedIceConfigFetchTime_ = null;
 // Get a TURN config, either from settings or from network traversal server.
 Call.asyncCreateTurnConfig = function(onSuccess, onError) {
   var settings = currentTest.settings;
-  settings.turnURI = 'turn:34.218.16.63:3478';
+  settings.turnURI = 'turn:54.233.217.115:3478';
   settings.turnUsername = 'test';
   settings.turnCredential = 'test';
   if (typeof(settings.turnURI) === 'string' && settings.turnURI !== '') {
@@ -258,7 +258,7 @@ Call.asyncCreateTurnConfig = function(onSuccess, onError) {
 // Get a STUN config, either from settings or from network traversal server.
 Call.asyncCreateStunConfig = function(onSuccess, onError) {
   var settings = currentTest.settings;
-  settings.stunURI = 'stun:34.218.16.63:3478,stun:stun.l.google.com:19302';
+  settings.stunURI = 'stun:54.233.217.115:3478,stun:stun.l.google.com:19302';
   if (typeof(settings.stunURI) === 'string' && settings.stunURI !== '') {
     var iceServer = {
       'urls': settings.stunURI.split(',')
