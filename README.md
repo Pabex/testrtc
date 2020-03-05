@@ -76,3 +76,9 @@ grunt build
 ```bash
 python dev_appserver.py out/app.yml
 ```
+
+## Deployment ##
+```bash
+gcloud app deploy out/app.yaml
+```
+

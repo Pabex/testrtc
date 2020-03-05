@@ -1,0 +1,9 @@
+*.pyc
+browsers*
+firefox*
+out
+cert
+!node_modules/
+node_modules/*
+!node_modules/webrtc-adapter/
+!node_modules/webrtc-adapter/*
