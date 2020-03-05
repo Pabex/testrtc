@@ -77,6 +77,17 @@ grunt build
 python dev_appserver.py out/app.yml
 ```
 
+#### Run and access from remote host ####
+```bash
+python google-cloud-sdk/platform/google_appengine/dev_appserver.py --host=0.0.0.0 --enable_host_checking=false out/app.yaml
+```
+
+#### Run SSL and access from remote host ####
+```bash
+python google-cloud-sdk/platform/google_appengine/dev_appserver.py --host=0.0.0.0 --enable_host_checking=false --ssl_certificate_path=cert/server.crt --ssl_certificate_key_path=cert/server.key out/app.yaml
+```
+Help to generate certificate: https://labsys.frc.utn.edu.ar/wiki-seguridad/src/contenedor.php?id=14&tipo=algoritmo
+
 ## Deployment ##
 ```bash
 gcloud app deploy out/app.yaml
